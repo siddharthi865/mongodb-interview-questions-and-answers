@@ -27,3 +27,12 @@
 | 23.   | [Set 23](/set-23/README.md) |
 | 24.   | [Set 24](/set-24/README.md) |
 | 25.   | [Set 25](/set-25/README.md) |
+| 26.   | [Set 26](/set-26/README.md) |
+| 27.   | [Set 27](/set-27/README.md) |
+| 28.   | [Set 28](/set-28/README.md) |
+| 29.   | [Set 29](/set-29/README.md) |
+| 30.   | [Set 30](/set-30/README.md) |
+| 31.   | [Set 31](/set-31/README.md) |
+| 32.   | [Set 32](/set-32/README.md) |
+| 33.   | [Set 33](/set-33/README.md) |
+| 34.   | [Set 34](/set-34/README.md) |
