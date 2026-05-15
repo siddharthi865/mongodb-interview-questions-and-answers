@@ -63,7 +63,7 @@ Example use case:
 - E-commerce platforms
 - Social media apps
 
-#### 4. 🧩 Embedded Data Model (Faster Access)
+#### 4. Embedded Data Model (Faster Access)
 
 Instead of joins, MongoDB allows embedding related data.
 
@@ -93,12 +93,12 @@ MongoDB provides automatic replication.
 - Secondary nodes replicate data
 - Automatic failover ensures uptime
 
-#### 6. 🛠️ Developer-Friendly (JSON-like Structure)
+#### 6. Developer-Friendly (JSON-like Structure)
 
 - Natural fit for JavaScript/Node.js apps
 - Easier mapping between backend and database objects
 
-#### 7. 🔍 Powerful Query & Aggregation Framework
+#### 7. Powerful Query & Aggregation Framework
 
 MongoDB supports advanced analytics using aggregation pipelines.
 
@@ -114,7 +114,7 @@ db.employees.aggregate([
 - Fully managed cloud database
 - Built-in backups, monitoring, scaling
 
-### ⚖️ When SQL Might Be Better (Important Interview Insight)
+### When SQL Might Be Better (Important Interview Insight)
 
 MongoDB is NOT always better:
 
