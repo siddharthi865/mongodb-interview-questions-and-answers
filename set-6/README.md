@@ -38,7 +38,7 @@ db.employees.insertOne({
 - Embedded documents reduce JOIN operations.
 - Data is stored in a way that closely matches application objects.
 
-##### SQL vs MongoDB:
+##### SQL vs MongoDB
 
 - SQL: Requires multiple JOINs
 - MongoDB: Single document fetch
