@@ -1,121 +1,22 @@
 # Set 7
 
-| S.No. | Question                                                                                              |
-| ----- | ----------------------------------------------------------------------------------------------------- |
-| 1.    | [How do you count documents in a collection?](#question-1-how-do-you-count-documents-in-a-collection) |
-
-## Question 1. How do you count documents in a collection?
-
-In MongoDB, counting documents means determining how many documents exist in a collection, optionally based on filters. MongoDB provides multiple methods, but the **recommended modern approach is `countDocuments()`**.
-
-## 1. `countDocuments()` (Recommended)
-
-### Definition
-
-Returns the **exact number of documents matching a filter**. It scans based on query criteria and respects indexes.
-
-### Example: Count all employees
-
-```javascript
-db.employees.countDocuments({});
-```
-
-### Explanation
-
-- `{}` → empty filter means “match all documents”
-- Returns total number of documents in `employees` collection
-
-### Example: Count Engineering employees
-
-```javascript
-db.employees.countDocuments({ department: "Engineering" });
-```
-
-### Explanation
-
-- Filters documents where `department` = "Engineering"
-- Uses indexes if available for better performance
-
-## 2. `estimatedDocumentCount()` (Fast, Approximate)
-
-### Definition
-
-Returns an **approximate count** using collection metadata (not scanning documents).
-
-### Example
-
-```javascript
-db.employees.estimatedDocumentCount();
-```
-
-### Explanation
-
-- No filter allowed
-- Reads collection metadata instead of scanning documents
-- Very fast but not always 100% accurate during heavy writes/deletes
-
-## 3. Legacy `count()` (Deprecated)
-
-```javascript
-db.employees.count({ department: "HR" });
-```
-
-Deprecated because:
-
-- Behavior inconsistent in sharded clusters
-- Replaced by `countDocuments()` and `estimatedDocumentCount()`
-
-## Performance Considerations
-
-### Use indexes
-
-If filtering:
-
-```javascript
-db.employees.createIndex({ department: 1 });
-```
-
-- Speeds up `countDocuments({ department: "Engineering" })`
-
----
-
-### Avoid full collection scan when possible
-
-- `countDocuments()` may scan documents if no index exists
-- `estimatedDocumentCount()` avoids scanning but is approximate
-
-## Common Pitfalls
-
-1. **Using `estimatedDocumentCount()` for filtered counts**
-   - Not supported
-   - Only gives total collection size
-
-2. **Assuming `countDocuments()` is always fast**
-   - Without indexes → full scan → slow on large datasets
-
-3. **Using deprecated `count()` in production**
-   - Can return inconsistent results in sharded environments
-
-## Real-world Use Case
-
-- Dashboard stats → `estimatedDocumentCount()` (fast)
-- Reporting system → `countDocuments()` (accurate)
-- Filtered analytics → `countDocuments({ ...query })`
-
-## Quick Summary
-
-| Method                   | Accuracy   | Speed  | Use Case        |
-| ------------------------ | ---------- | ------ | --------------- |
-| countDocuments()         | Exact      | Medium | Filtered counts |
-| estimatedDocumentCount() | Approx     | Fast   | Total count     |
-| count()                  | Deprecated | —      | Avoid           |
-
-## Follow-up Interview Questions
-
-### 1. Why is `countDocuments()` preferred over `count()`?
-
-Because it provides accurate results, supports filters properly, and works reliably in sharded clusters.
-
-### 2. How can you optimize counting large collections?
-
-By creating appropriate indexes and avoiding full collection scans during `countDocuments()` queries.
+1. How do you count documents in a collection?
+2. How do you perform pagination in MongoDB?
+3. How do you use `$type` to filter by data type?
+4. What is the difference between embedded documents and arrays?
+5. How do you query array elements?
+6. How do you query for array length?
+7. How do you update a specific array element?
+8. How do you add multiple elements to an array?
+9. How do you remove a specific element from an array?
+10. What are MongoDB operators `$set`, `$unset`, and `$inc`?
+11. How do you use `$mul` in an update operation?
+12. How do you use `$rename` in an update operation?
+13. How do you find documents with fields that exist but are empty?
+14. How do you find documents with a field not existing?
+15. How do you use `db.collection.stats()`?
+16. Explain the concept of capped collections and their use cases.
+17. How do you find the size of a collection?
+18. How do you check index usage for a query in MongoDB?
+19. What is the difference between single-field and compound indexes?
+20. What is a hashed index?
